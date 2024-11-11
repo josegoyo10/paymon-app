@@ -10,6 +10,7 @@ use App\Livewire\CourseRegistration;
 use App\Livewire\MyCourseRegistration;
 use App\Livewire\VideoCurso;
 use App\Livewire\VideoInteraction;
+use App\Livewire\AdminCourseUsers;
 
 Route::get('/', function () {
     //return view('welcome');
@@ -33,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/cursos-registrados/{userId}', MyCourseRegistration::class)->name('cursos-registrados');
     Route::get('/video-curso/{courseId}', VideoCurso::class)->name('video-curso');
     Route::get('/add-comment/{videoId}', VideoInteraction::class)->name('add-comment-video');
+    Route::get('/show-progress', AdminCourseUsers::class)->name('show-progress');
 
 });
 

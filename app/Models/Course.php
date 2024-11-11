@@ -32,4 +32,9 @@ class Course extends Model
     {
         return $this->hasMany(Video::class);
     }
+
+    public function registeredUsers()
+{
+    return $this->hasMany(CourseUser::class);
+}
 }

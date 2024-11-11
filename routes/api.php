@@ -7,6 +7,7 @@ use App\Http\Controllers\API\CourseController;
 use App\Http\Controllers\API\VideoController;
 use App\Http\Controllers\API\CommentController;
 use App\Http\Controllers\API\LikeController;
+use App\Http\Controllers\API\AdminCourseController;
 
 Route::post('/register', [UserController::class, 'store'])->name('api.register');
 Route::post('/courses', [CourseController::class, 'store'])->name('api.courses.store');
@@ -20,6 +21,7 @@ Route::post('/mycourse/{user}', [CourseController::class, 'index'])->name('api.c
 Route::post('/videos/{video}/comments', [CommentController::class, 'store'])->name('api.comments.store');;
 Route::get('/videos/{video}', [CommentController::class, 'index'])->name('api.videos.comments');
 Route::post('/videos/{video}/like', [LikeController::class, 'like'])->name('api.videos.like');
+Route::get('/admin/courses/{courseId}/users', [AdminCourseController::class, 'getRegisteredUsers']);
 
 // Route::middleware('auth:sanctum')->group(function () {
 //    // Route::post('/courses', [CourseController::class, 'store'])->name('api.courses.store');
